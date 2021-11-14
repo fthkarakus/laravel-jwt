@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\V1\Balance;
+use App\Models\V1\Order;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,5 +55,13 @@ class User extends Authenticatable implements JWTSubject
     public function products()
     {
         return $this->hasMany(Product::class);
+    }
+    public function balance()
+    {
+        return $this->hasMany(Balance::class);
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

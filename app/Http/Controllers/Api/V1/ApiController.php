@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
-use JWTAuth;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Validator;
+use Symfony\Component\HttpFoundation\Response;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class ApiController extends Controller
 {
@@ -108,14 +109,5 @@ class ApiController extends Controller
         }
     }
 
-    public function get_user(Request $request)
-    {
-        $this->validate($request, [
-            'token' => 'required'
-        ]);
 
-        $user = JWTAuth::authenticate($request->token);
-
-        return response()->json(['user' => $user]);
-    }
 }
