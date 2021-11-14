@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\V1;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Balance extends Model
 {
     use HasFactory;
+    protected $table = 'balances';
     protected $fillable = [
-        'name', 'sku', 'price', 'quantity'
+        'user_id', 'user_balance'
     ];
 }
