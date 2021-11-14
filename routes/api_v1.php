@@ -7,7 +7,6 @@ use App\Http\Controllers\Api\V1\CustomerController;
 use App\Http\Controllers\Api\V1\CarController;
 use App\Http\Controllers\Api\V1\ServiceController;
 use App\Http\Controllers\Api\V1\OrderController;
-use App\Http\Controllers\ProductController;
 
 Route::get('/', function (){
    return view('welcome');
